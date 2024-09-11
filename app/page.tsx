@@ -11,7 +11,7 @@ const DynamicFeed = dynamic(() => import("../components/feed"), {
 
 export default function Home() {
   return (
-    <main className="my-[57px] py-2 md:ml-16 md:my-0 md:py-4 xl:py-6">
+    <main className="my-[57px] py-2 md:ml-16 md:my-0 md:py-4 xl:py-6 xl:ml-56">
       <Container>
         <DynamicFeed items={posts} />
       </Container>

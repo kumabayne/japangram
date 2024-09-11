@@ -38,7 +38,7 @@ export default function Feed({ items }: { items: PostsType }) {
             {item.media.map((media) => (
               <Image
                 key={media.src}
-                className="rounded-md shadow"
+                className="rounded-md shadow xl:rounded-xl"
                 src={media.src}
                 width={media.width}
                 height={media.height}
