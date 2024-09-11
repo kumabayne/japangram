@@ -2,8 +2,8 @@ import { NavigationType } from "@/types/layout";
 import {
   IconCirclePlus,
   IconCompass,
-  IconHome,
   IconSearch,
+  IconTorii,
   IconUser,
 } from "@tabler/icons-react";
 
@@ -12,7 +12,7 @@ export const navigationData: NavigationType[] = [
     id: 1,
     href: "/",
     text: "Home",
-    icon: IconHome,
+    icon: IconTorii,
   },
   {
     id: 2,
