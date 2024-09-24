@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
 import { useEffect, useState } from "react";
 
 export function Modal({
@@ -40,6 +40,16 @@ export function Modal({
   }, []);
 
   useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, [open]);
+
+  useEffect(() => {
     if (pathname !== `/p/${id}`) {
       setOpen(false);
     }
@@ -52,6 +62,7 @@ export function Modal({
       onOpenChange={(open) => !open && handleChange()}
       modal={modal}
     >
+      <DialogOverlay />
       <DialogContent
         onInteractOutside={(e) => {
           if (!modal) {
