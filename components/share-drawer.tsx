@@ -2,14 +2,12 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Button } from "./ui/button";
 import {
   IconBrandFacebook,
   IconBrandInstagram,
@@ -21,6 +19,7 @@ import {
   IconMessageCircle,
   IconQrcode,
 } from "@tabler/icons-react";
+import { Dispatch, SetStateAction } from "react";
 
 const shareTo = [
   { id: 1, text: "Share to Instagram", icon: IconBrandInstagram },
@@ -34,7 +33,13 @@ const shareTo = [
   { id: 9, text: "See all", icon: IconCornerUpRight },
 ];
 
-export default function ShareDrawer({ open, setOpen }) {
+export default function ShareDrawer({
+  open,
+  setOpen,
+}: {
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+}) {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger className="hidden">Open</DrawerTrigger>

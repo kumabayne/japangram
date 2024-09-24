@@ -3,21 +3,16 @@
 import { create } from "@/actions/create";
 import { Button } from "@/components/ui/button";
 import { IconCirclePlus } from "@tabler/icons-react";
-import Image from "next/image";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import UploadGallery from "./upload-gallery";
 
 export default function CloudinaryUpload() {
-  const [formData, setFormData] = useState({ files: [], images: [] });
+  const [formData, setFormData] = useState<{ files: File[]; images: string[] }>(
+    { files: [], images: [] }
+  );
 
-  const handleChange = (e: Event) => {
-    if (
-      "target" in e &&
-      typeof e.target === "object" &&
-      e.target !== null &&
-      (e.target as HTMLInputElement).files &&
-      (e.target as HTMLInputElement).files.length
-    ) {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
       const src = URL.createObjectURL(e.target.files[0]);
 
       setFormData({
@@ -48,7 +43,7 @@ export default function CloudinaryUpload() {
             onChange={handleChange}
             type="file"
             name="media[]"
-            multiple={true}
+            multiple
             required
           />
           <IconCirclePlus className="w-8 h-8 pointer-events-none absolute z-10 inset-0" />
