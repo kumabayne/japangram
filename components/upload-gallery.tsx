@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function UploadGallery({ images }) {
+export default function UploadGallery({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0);
 
   return (
