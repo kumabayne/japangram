@@ -15,8 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  modal,
   children,
 }: Readonly<{
+  modal: React.ReactNode;
   children: React.ReactNode;
 }>) {
   return (
@@ -35,7 +37,9 @@ export default function RootLayout({
         >
           <Header />
           <Navigation navigationData={navigationData} />
+          {modal}
           {children}
+          <div id="modal-root" />
         </ThemeProvider>
       </body>
     </html>

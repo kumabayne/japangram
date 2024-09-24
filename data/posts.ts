@@ -1,6 +1,6 @@
-import { PostsType, PostType } from "@/types/posts";
+import { CommentsType, PostsType, PostType, ReplyType } from "@/types/posts";
 
-export const post: PostType = {
+export const postData: PostType = {
   author: {
     avatar: "",
     username: "testuser1",
@@ -19,9 +19,9 @@ export const post: PostType = {
   timestamp: 1725512449175,
 };
 
-export const posts: PostsType = {
+export const postsData: PostsType = {
   posts: [
-    post,
+    postData,
     {
       author: {
         avatar: "",
@@ -243,7 +243,7 @@ export const posts: PostsType = {
         avatar: "",
         username: "testuser14",
       },
-      body: "Accusantium omnis error, soluta impedit quae iste, dolorem exercitationem nihil expedita quam, nam nobis molestiae amet nulla incidunt ad natus. Iste unde quidem minus voluptas mollitia iure, blanditiis quis odio?",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed tempor nunc. Nullam quis nisl diam. Morbi et dolor et tellus dignissim iaculis. Etiam vitae risus et elit elementum placerat. Donec non massa sed lorem vehicula feugiat vitae a quam. Etiam aliquet libero leo, congue consectetur mauris rutrum in. Duis tortor mi, malesuada vel massa quis, pharetra scelerisque erat. In placerat quis turpis nec porta. Nullam lobortis, odio at lacinia tincidunt, ante urna iaculis est, quis finibus massa augue eu justo. Etiam sodales justo a nunc varius maximus. Mauris urna sem, tristique ac aliquam ut, eleifend at enim. Curabitur magna lacus, viverra ullamcorper tortor ut, commodo rutrum leo. Mauris vestibulum rutrum augue, a mattis ligula ornare ut. Maecenas sodales eget lorem ut efficitur.<br><br>Ut egestas imperdiet ipsum sit amet tincidunt. Nullam vitae lacus scelerisque, gravida justo at, hendrerit nulla. Morbi ac sem finibus, efficitur urna vitae, ultricies purus. Curabitur non elit eget sem vestibulum porttitor eu nec turpis. Mauris libero libero, rhoncus fringilla ultricies et, vehicula id velit. Donec convallis mauris quis eros interdum fringilla. Aenean pharetra dapibus mauris, sed ultrices enim mollis sit amet. Nullam non lorem felis. Etiam bibendum elit in ex tincidunt vehicula. Phasellus at lectus elementum, posuere velit nec, mattis tellus. Phasellus tellus nibh, dignissim vel nibh eleifend, interdum efficitur libero. Integer maximus turpis in ante vulputate accumsan. Sed sed justo finibus, venenatis ante vitae, luctus ex. In eget facilisis diam, vel blandit neque. Suspendisse dictum feugiat pharetra. Suspendisse mattis nisl augue, ut ultricies leo elementum nec.<br><br>Sed congue nulla lectus, eget placerat purus dapibus bibendum. Cras hendrerit, nisl et congue feugiat, eros turpis fermentum leo, in viverra tellus erat sit amet ligula. Morbi risus elit, sagittis in auctor eu, ultricies nec eros. Curabitur ultrices accumsan odio ut pretium. Mauris sem elit, tempor a purus et, mollis luctus elit. Mauris congue sagittis tortor ac luctus. Aenean vel massa enim. Sed luctus, risus ac mattis placerat, nulla arcu posuere nisl, non tristique libero metus quis odio. Phasellus ullamcorper mauris in scelerisque condimentum. Aliquam erat volutpat. Nunc sollicitudin convallis elementum. Praesent aliquam facilisis ligula, gravida lacinia mauris pellentesque nec.",
       id: "fb4ea432-7f86-480b-b419-e4862e506d74",
       media: [
         {
@@ -978,3 +978,256 @@ export const posts: PostsType = {
     },
   ],
 };
+
+export const commentsData: CommentsType = {
+  comments: [
+    {
+      author: { avatar: "", username: "testuser1" },
+      body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+      id: "38cc8471-4442-4d41-b310-deb32096b65a",
+      timestamp: 1726985683115,
+      likes: 4,
+      replyCount: 23,
+      replies: [],
+    },
+    {
+      author: { avatar: "", username: "testuser2" },
+      body: "Nisi accusamus facere minima voluptatibus expedita ipsam inventore eos corrupti pariatur, magni soluta, aliquid, necessitatibus dolorum tempora error quia?",
+      id: "0e9d0fc4-0e6d-4e63-beb1-55873d297eca",
+      timestamp: 1726986175474,
+      likes: 0,
+      replyCount: 4,
+      replies: [
+        {
+          author: { avatar: "", username: "testuser4" },
+          body: "Asperiores minus pariatur deleniti dolore possimus accusantium, optio suscipit dolorum?",
+          id: "c2bfae09-5a05-4c6e-972a-30dbf6dba2cf",
+          timestamp: 1726986453919,
+          likes: 2,
+          parentId: "0e9d0fc4-0e6d-4e63-beb1-55873d297eca",
+        },
+        {
+          author: { avatar: "", username: "testuser5" },
+          body: "Sint sapiente iste laudantium ad inventore tempore necessitatibus incidunt provident cumque perspiciatis, quae, ab assumenda cupiditate atque aut, doloribus exercitationem.",
+          id: "e152041d-47a1-434b-b651-fc58e2f632dd",
+          timestamp: 1726986884042,
+          likes: 0,
+          parentId: "0e9d0fc4-0e6d-4e63-beb1-55873d297eca",
+        },
+        {
+          author: { avatar: "", username: "testuser2" },
+          body: "Deleniti accusamus suscipit illo soluta voluptatum culpa doloremque vitae dicta quos aliquam possimus odit numquam quibusdam, nam itaque odio nostrum amet eum eaque aperiam assumenda?",
+          id: "f04fe50b-cb01-4c8a-a3b8-eec494f107cf",
+          timestamp: 1726986979154,
+          likes: 15,
+          parentId: "0e9d0fc4-0e6d-4e63-beb1-55873d297eca",
+        },
+        {
+          author: { avatar: "", username: "testuser6" },
+          body: "Quam tempora dignissimos repellendus exercitationem.",
+          id: "1be1edbd-9c94-4fd2-8cdc-0925d42b78c4",
+          timestamp: 1726987067623,
+          likes: 0,
+          parentId: "0e9d0fc4-0e6d-4e63-beb1-55873d297eca",
+        },
+      ],
+    },
+    {
+      author: { avatar: "", username: "testuser3" },
+      body: "Sunt, amet repellat?",
+      id: "2896abbf-88d2-4e35-adf5-9893c418adc8",
+      timestamp: 1726986312822,
+      likes: 8,
+      replyCount: 0,
+      replies: [],
+    },
+  ],
+  commentCount: 30,
+};
+
+export const replies23: ReplyType[] = [
+  {
+    author: { avatar: "", username: "testuser7" },
+    body: "Labore iusto numquam incidunt illum non, impedit suscipit illo nesciunt quo natus tenetur atque nemo ipsam unde hic cum ad aut deserunt.",
+    id: "759de26f-03df-4025-8648-bab1b00b3b7f",
+    timestamp: 1726987134047,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser8" },
+    body: "psam alias officiis saepe dolore architecto pariatur omnis.",
+    id: "071a8761-4ccd-465a-a696-999ee445e3e1",
+    timestamp: 1726987194743,
+    likes: 3,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser9" },
+    body: "Harum officiis corrupti perspiciatis odio explicabo, quod a saepe voluptatum magnam accusamus?",
+    id: "70b596c9-4e8b-4a1a-9b33-629d55c8f6ff",
+    timestamp: 1726987268933,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser1" },
+    body: "Delectus, tenetur iusto corrupti molestiae eveniet architecto? Voluptatum earum alias qui a eos, quod cupiditate suscipit excepturi architecto.",
+    id: "abf2706d-60c5-4708-b325-77e9ac6b9aeb",
+    timestamp: 1726987331469,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser10" },
+    body: "Vel necessitatibus recusandae optio facilis libero autem, nam fugit aliquam quaerat ab dolor pariatur non quod doloremque ducimus consequuntur, quos ipsa atque, consectetur placeat quidem.",
+    id: "2abba607-3739-4bfe-9a43-b3a14e11ebed",
+    timestamp: 1726987393855,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser11" },
+    body: "Voluptatibus tempore atque odit sint.",
+    id: "f116ab8d-d1cd-41fe-a979-eab4022c7dc3",
+    timestamp: 1726987454782,
+    likes: 2,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser1" },
+    body: "Harum, minus asperiores. Quidem odit officia quam.",
+    id: "742eccc1-db32-42f5-ae83-87918026a137",
+    timestamp: 1726987519196,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser11" },
+    body: "Quos modi, atque necessitatibus illo blanditiis tempore repudiandae magnam, tenetur voluptatum, laudantium ratione facilis?",
+    id: "f760a24c-b67d-4b6c-986a-e097a5ab5f1a",
+    timestamp: 1726987605251,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser1" },
+    body: "Quibusdam dignissimos sit modi, quis dolor magnam animi incidunt.",
+    id: "1bdcb964-468e-4cb6-a8fa-9a2ada470366",
+    timestamp: 1726987658645,
+    likes: 1,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser12" },
+    body: "Similique non doloremque eveniet incidunt mollitia beatae consectetur labore at harum reiciendis iure, sed, qui ipsam nam.",
+    id: "7922b5b2-ac00-4a4c-9ef7-a63cc265c433",
+    timestamp: 1726987707977,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser13" },
+    body: "Natus minima aliquam obcaecati. Sunt, quaerat magnam reiciendis soluta pariatur nam delectus. Animi!",
+    id: "e4489caa-4b50-497e-93a5-7ef583e5f6db",
+    timestamp: 1726987764335,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser14" },
+    body: "Quidem, quos facilis inventore maiores voluptatum ut labore hic!",
+    id: "f43137d2-c56b-463b-90ff-19f1fff7f775",
+    timestamp: 1726987820092,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser1" },
+    body: "Ab illum eos, perspiciatis facilis id sunt consequatur provident, consectetur repudiandae tenetur nobis et autem illo debitis iusto nemo fugit aliquid.",
+    id: "a42e504b-30ef-4f7f-bb5d-e75de93ee30c",
+    timestamp: 1726987916488,
+    likes: 24,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser15" },
+    body: "Non, nobis vel error odio officia ducimus ipsa amet in beatae dolores consectetur quaerat earum nostrum deserunt a.",
+    id: "37c20f16-0390-4dc7-8934-b5b65de29773",
+    timestamp: 1726987975251,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser16" },
+    body: "Ab, eius praesentium?",
+    id: "60c7ea99-3c8a-459e-8542-0e47a161f6e7",
+    timestamp: 1726988025793,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser17" },
+    body: "Praesentium minus aut reiciendis hic veritatis odit iusto ab.",
+    id: "f330aa3e-de01-4950-93f6-9404ea866889",
+    timestamp: 1726988076098,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser18" },
+    body: "Unde dolorem voluptas labore.",
+    id: "b5d47337-ed2e-4acf-90cb-ca101cab5379",
+    timestamp: 1726988128602,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser19" },
+    body: "Suscipit minus, perferendis commodi enim aspernatur quas, ullam temporibus vitae accusantium ad dolor esse voluptas molestias tempora ducimus repellat eos inventore est tenetur natus aliquam magni.",
+    id: "5443327b-3b01-4e2c-8be3-0daf37490f21",
+    timestamp: 1726988360074,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser20" },
+    body: "Quos molestias ipsum quisquam, aut nihil, natus omnis qui excepturi nisi est, enim illo dolorum corrupti blanditiis praesentium debitis eos quidem ullam dolore.",
+    id: "bc8a8f4c-93f6-4912-8772-bc747bc4cee1",
+    timestamp: 1726988371568,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser21" },
+    body: "Sequi aliquam illo voluptatem repellendus necessitatibus voluptas.",
+    id: "b00f26d5-6cd2-467b-abc6-a25d33d8dff7",
+    timestamp: 1726988383557,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser22" },
+    body: "Facere ipsa explicabo quisquam laudantium omnis impedit laboriosam et aliquam consequuntur nihil voluptatibus necessitatibus sunt ea fuga quibusdam iure quaerat obcaecati itaque voluptates voluptatem quod, nam exercitationem. ",
+    id: "4c368c74-fcbd-49e9-b9dc-7c151a3b60a2",
+    timestamp: 1726988397755,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser23" },
+    body: "Neque, ipsum! Veritatis!",
+    id: "b5125754-bd11-4c9f-8080-653f03bc1802",
+    timestamp: 1726988409738,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+  {
+    author: { avatar: "", username: "testuser24" },
+    body: "Explicabo esse quibusdam possimus at. Inventore, cum facilis et blanditiis minus eveniet dolorum.",
+    id: "6974a6f5-1095-4b68-8f26-765ae16eeb4d",
+    timestamp: 1726988421484,
+    likes: 0,
+    parentId: "38cc8471-4442-4d41-b310-deb32096b65a",
+  },
+];

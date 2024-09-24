@@ -2,6 +2,7 @@
 
 import { PostsType } from "@/types/posts";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
@@ -34,8 +35,8 @@ export default function Feed({ items }: { items: PostsType }) {
     >
       <Masonry gutter={`${gutter}px`}>
         {items.posts.map((item) => (
-          <div key={item.id}>
-            {item.media.map((media) => (
+          <Link key={item.id} href={`/p/${item.id}`} passHref>
+            {item.media.map((media, index) => (
               <Image
                 key={media.src}
                 className="rounded-md shadow xl:rounded-xl"
@@ -43,9 +44,10 @@ export default function Feed({ items }: { items: PostsType }) {
                 width={media.width}
                 height={media.height}
                 alt={media.alt}
+                priority={index === 0}
               />
             ))}
-          </div>
+          </Link>
         ))}
       </Masonry>
     </ResponsiveMasonry>
