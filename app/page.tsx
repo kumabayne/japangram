@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import Container from "@/components/container";
 import FeedSkeleton from "@/components/feed-skelton";
 import { postsData } from "@/data/posts";
@@ -9,7 +10,9 @@ const DynamicFeed = dynamic(() => import("../components/feed"), {
   loading: () => <FeedSkeleton />,
 });
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+
   return (
     <main className="my-[49px] py-2 md:ml-16 md:my-0 md:py-4 xl:py-6 xl:ml-56">
       <Container>
