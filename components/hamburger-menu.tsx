@@ -25,7 +25,7 @@ export default function HamburgerMenu() {
   return (
     <Menubar className="border-none p-0 h-auto">
       <MenubarMenu>
-        <MenubarTrigger className="p-2 !bg-transparent">
+        <MenubarTrigger className="p-2 !bg-transparent border cursor-pointer">
           <IconMenu className="w-6 h-6" stroke={1.5} />
           <span className="sr-only">Menu</span>
         </MenubarTrigger>
