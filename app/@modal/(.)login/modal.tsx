@@ -10,7 +10,7 @@ export function Modal({ children }: { children: ReactNode }) {
 
   return createPortal(
     <Dialog defaultOpen={true} onOpenChange={() => router.back()}>
-      <DialogContent className="max-w-[90vw] rounded-2xl">
+      <DialogContent className="max-w-[90vw] md:max-w-sm rounded-2xl">
         {children}
       </DialogContent>
     </Dialog>,

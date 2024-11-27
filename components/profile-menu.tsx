@@ -10,13 +10,25 @@ import {
 } from "./ui/dropdown-menu";
 import { Session } from "next-auth";
 import UserAvatar from "./user-avatar";
-import { signOut } from "next-auth/react";
+import { signOut, UpdateSession } from "next-auth/react";
 
-export default function ProfileMenu({ session }: { session: Session }) {
+export default function ProfileMenu({
+  session,
+  align = "end",
+}: {
+  session:
+    | Session
+    | {
+        update: UpdateSession;
+        data: Session;
+        status: "authenticated";
+      };
+  align?: "end" | "center" | "start";
+}) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        {session.user && (
+        {"user" in session && session.user && (
           <UserAvatar
             src={session.user?.image || ""}
             alt={session.user.displayName}
@@ -24,7 +36,7 @@ export default function ProfileMenu({ session }: { session: Session }) {
         )}
         <span className="sr-only">Profile</span>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align={align}>
         <DropdownMenuItem asChild>
           <Link href="/profile">Profile</Link>
         </DropdownMenuItem>
